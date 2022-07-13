@@ -4,16 +4,16 @@ class Movie {
     public $title;
     public $protagonist;
     public $year;
-    public $time;
     public $lenguage;
     public $produced;
 
-    function __construct($_title, $_protagonist)
+    function __construct($_title, $_protagonist, $_Year, $_leanguage, $_produced)
     {
-        $this->time;
-        $this->year;
-        $this->lenguage;
-        $this->produced;
+        $this->setTitle($_title);
+        $this->setProtagonist($_protagonist);
+        $this->setYear($_Year);
+        $this->setLenguage($_leanguage);
+        $this->setProduced($_produced);
     }
 
     /**
@@ -77,26 +77,6 @@ class Movie {
     }
 
     /**
-     * Get the value of time
-     */ 
-    public function getTime()
-    {
-        return $this->time;
-    }
-
-    /**
-     * Set the value of time
-     *
-     * @return  self
-     */ 
-    public function setTime($time)
-    {
-        $this->time = $time;
-
-        return $this;
-    }
-
-    /**
      * Get the value of lenguage
      */ 
     public function getLenguage()
@@ -136,7 +116,24 @@ class Movie {
         return $this;
     }
 
-    
+    function printCard() {
+        $name = $this->getTitle();
+        $actor = $this->getProtagonist();
+        $productor = $this->getProduced();
+        $year = $this->getYear();
+        $lean = $this->getLenguage();
+
+        echo "
+        <h3>
+            <span> $name </span> is a $year film produced by $productor interpreted by $actor in $lean.
+        </h3>
+        
+        ";
+        
+        
+    }
 }
+
+
 
 
